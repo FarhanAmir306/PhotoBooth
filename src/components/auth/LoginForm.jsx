@@ -12,7 +12,7 @@ export default function LoginForm() {
     setError,
   } = useForm();
 
-  const {setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
   const navigate = useNavigate();
 
   const submitForm = async (formData) => {
@@ -22,18 +22,13 @@ export default function LoginForm() {
         `${import.meta.env.VITE_SERVER_BASE_URL}/auth/login`,
         formData
       );
-     
+
       if (response.status === 200) {
         const { accessToken } = response.data;
-       
         if (accessToken) {
-          const accessToken = response.data.accessToken;
-          const refreshToken = response.data.refreshToken;
-          const user = response.data;
+          const { refreshToken } = response.data;
+          const { user } = response.data;
           setAuth({ user, accessToken, refreshToken });
-          // console.log('user',user);
-          // console.log('accessTOken',accessToken);
-          // console.log('refreshtoken',refreshToken);
           navigate("/");
         }
       }
@@ -46,7 +41,7 @@ export default function LoginForm() {
     }
   };
 
-
+  console.log(auth);
 
   return (
     <>

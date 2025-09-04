@@ -15,7 +15,6 @@ export default function Login() {
 
           {/* <!-- Login Form --> */}
           <LoginForm/>
-
           {/* <!-- Sign Up Box --> */}
           <div className="bg-white p-6 border border-gray-300 text-center ">
             <p className="text-sm">

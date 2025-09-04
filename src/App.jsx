@@ -8,6 +8,7 @@ import PostDetails from "./components/post/PostDetails";
 import EditProfile from "./components/profile/EditProfile";
 import Profile from "./components/profile/Profile";
 import PrivateRoutes from "./router/PrivateRoutes";
+import CreatePost from "./components/page/CreatePost";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/post-details" element={<PostDetails />} />
+          <Route path="/create-post" element={<CreatePost/>} />
         </Route>
 
         <Route path="/login" element={<Login />} />
